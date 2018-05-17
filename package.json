@@ -41,6 +41,7 @@
     "sass-loader": "^6.0.7",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^3.11.0",
+    "webpack-node-externals": "^1.7.2",
     "webpack-synchronizable-shell-plugin": "0.0.7",
     "winston-color": "^1.0.0"
   }
