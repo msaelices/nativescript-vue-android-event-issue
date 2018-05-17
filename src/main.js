@@ -3,6 +3,17 @@ import VueRouter from 'vue-router'
 
 const application = require('tns-core-modules/application')
 
+application.android.on('activityBackPressed', args => {
+  if (router.history.stack.length > 1) {
+    router.back()
+    args.cancel = true
+  }
+})
+
+application.android.on(application.AndroidApplication.activityStartedEvent, args => {
+  console.log('activityStarted event called!')
+})
+
 Vue.config.silent = false
 Vue.config.debug = true
 
@@ -59,18 +70,6 @@ const router = new VueRouter({
 })
 
 router.push('/')
-
-application.android.on('activityBackPressed', args => {
-  if (router.history.stack.length > 1) {
-    router.back()
-    args.cancel = true
-  }
-})
-
-application.android.on(application.AndroidApplication.activityStartedEvent, args => {
-  console.log('activityStarted event called!')
-})
-
 
 new Vue({
   router,
