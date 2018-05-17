@@ -15,7 +15,7 @@ new Vue({
 
   created () {
     application.android.on(application.AndroidApplication.activityStartedEvent, args => {
-      console.log('Calling activityStarted event...')
+      console.log('activityStarted event called!')
     })
   }
 }).$start();
