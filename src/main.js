@@ -68,9 +68,7 @@ application.android.on('activityBackPressed', args => {
 })
 
 application.android.on(application.AndroidApplication.activityStartedEvent, args => {
-  console.log('Calling activityStarted event...')
-  throw new Error('ERROR')
-  // console.dir(application.android.startActivity)
+  console.log('activityStarted event called!')
 })
 
 
